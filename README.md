@@ -9,6 +9,6 @@
     fpush = "!git push origin \"$(git rev-parse --abbrev-ref HEAD)\" --force-with-lease"
     st = status
     cmend = "!git add . && git commit --amend --no-edit && git fpush ; git status"
-    grog = log --graph --abbrev-commit --decorate --all --format=format:\"%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)\"
     mrg = "!git get master && git get - && git merge master --no-edit ; git status"
     oops = !sh -c \"git checkout origin/master -- $1\"
+    ldel = "!git branch | grep -v "master" | xargs git branch -D"

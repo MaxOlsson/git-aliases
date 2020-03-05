@@ -12,3 +12,4 @@
     mrg = "!git get master && git get - && git merge master --no-edit ; git status"
     oops = !sh -c \"git checkout origin/master -- $1\"
     ldel = "!git branch | grep -v "master" | xargs git branch -D"
+    rgone = "!git fetch -p && git branch -v --format '%(refname:short) %(upstream:track)' | grep -e \"\\[gone\\]\" | awk '{ print $1 }' | xargs git branch -D" 

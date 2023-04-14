@@ -11,5 +11,5 @@
     cmend = "!git add . && git commit --amend --no-edit && git fpush ; git status"
     mrg = "!git get master && git get - && git merge master --no-edit ; git status"
     oops = !sh -c \"git checkout origin/master -- $1\"
-    ldel = "!git branch | grep -v "master\|main" | xargs git branch -D"
+    ldel = "!git branch | grep -v -e "master" -e "main" | xargs git branch -D"
     rgone = "!git fetch -p && git branch -v --format '%(refname:short) %(upstream:track)' | grep -e \"\\[gone\\]\" | awk '{ print $1 }' | xargs git branch -D" 
